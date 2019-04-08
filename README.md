@@ -1,2 +1,2 @@
 # cozy-cuisines
-angular app to collect of best cuisines all around the world
+angular app to collect best of cuisines from all over the world
