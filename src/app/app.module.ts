@@ -8,6 +8,8 @@ import { CusionsRecipesComponent } from './components/cusions-recipes/cusions-re
 import { LoginComponent } from './components/login/login/login.component';
 import { SignupComponent } from './components/login/signup/signup.component';
 import { RouterModule } from '@angular/router';
+import { CuisinesService } from './services/cuisines.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { RouterModule } from '@angular/router';
     SignupComponent
   ],
   imports: [
-    BrowserModule,  RouterModule.forRoot([
+    BrowserModule,   
+    HttpClientModule,
+    RouterModule.forRoot([
       { path: '', component: HomeComponent },
       {
         path: 'cuisines',
@@ -29,10 +33,15 @@ import { RouterModule } from '@angular/router';
       {
         path: 'login',
         component: LoginComponent
+      },
+      
+      {
+        path: 'signup',
+        component: SignupComponent
       }
     ])
   ],
-  providers: [],
+  providers: [CuisinesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   apiKey: "51c4d4824dbf0cd82bbf67911cfe7c14",
-    // authDomain: "todo-fs.firebaseapp.com",
-    // databaseURL: "https://todo-fs.firebaseio.com",
-    // projectId: "todo-fs",
-    // storageBucket: "todo-fs.appspot.com",
-    // messagingSenderId: "886086886197"
-  
+  apiUrl: "https://developers.zomato.com/api/v2.1/cuisines?city_id=280&"
+  // authDomain: "todo-fs.firebaseapp.com",
+  // databaseURL: "https://todo-fs.firebaseio.com",
+  // projectId: "todo-fs",
+  // storageBucket: "todo-fs.appspot.com",
+  // messagingSenderId: "886086886197"
 };
 
 /*
