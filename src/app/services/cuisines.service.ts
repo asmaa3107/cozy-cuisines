@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "src/environments/environment";
+import * as auth0 from 'auth0-js';
 
-@Injectable({
+@Injectable({ 
   providedIn: "root"
 })
 export class CuisinesService {
