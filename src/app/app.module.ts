@@ -1,15 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { HomeComponent } from './components/home/home.component';
-import { CusionsComponent } from './components/cusions/cusions.component';
-import { CusionsRecipesComponent } from './components/cusions-recipes/cusions-recipes.component';
-import { LoginComponent } from './components/login/login/login.component';
-import { SignupComponent } from './components/login/signup/signup.component';
-import { RouterModule } from '@angular/router';
-import { CuisinesService } from './services/cuisines.service';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { AppComponent } from "./app.component";
+import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
+import { HomeComponent } from "./components/home/home.component";
+import { CusionsComponent } from "./components/cusions/cusions.component";
+import { CusionsRecipesComponent } from "./components/cusions-recipes/cusions-recipes.component";
+import { LoginComponent } from "./components/login/login/login.component";
+import { SignupComponent } from "./components/login/signup/signup.component";
+import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+/*********services Provider **** */
+import { AuthService } from "./services/auth.service";
+import { CuisinesService } from "./services/cuisines.service";
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,27 +24,27 @@ import { HttpClientModule } from '@angular/common/http';
     SignupComponent
   ],
   imports: [
-    BrowserModule,   
+    BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent },
+      { path: "", component: HomeComponent },
       {
-        path: 'cuisines',
+        path: "cuisines",
         component: CusionsComponent
       },
-     
+
       {
-        path: 'login',
+        path: "login",
         component: LoginComponent
       },
-      
+
       {
-        path: 'signup',
+        path: "signup",
         component: SignupComponent
       }
     ])
   ],
-  providers: [CuisinesService],
+  providers: [CuisinesService, AuthService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

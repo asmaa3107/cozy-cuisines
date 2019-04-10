@@ -15,12 +15,15 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/cuisines">Cuisines</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login">login</a>
+        <li class="nav-item"  *ngIf="!auth.isAuthenticated()" ><!-- routerLink="/login" routerLink="/signup"-->
+          <a class="nav-link"  (click)="auth.login()">login</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/signup">signup</a>
-        </li>
+        <li class="nav-item" *ngIf="auth.isAuthenticated">
+            <a class="nav-link" (click)="auth.logout()">logout</a>
+          </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" (click)="auth.logout()">signup</a>
+        </li> -->
       </ul>
     </div>
   </div>
