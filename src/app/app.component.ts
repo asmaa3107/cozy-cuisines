@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'cozy-cuisines';
   
   constructor(public auth: AuthService) {
-    auth.handleAuthentication();
+    auth.handleAuthentication();  
   }
   
   ngOnInit() {
