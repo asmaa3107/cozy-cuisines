@@ -13,7 +13,7 @@ export class AppComponent {
     //auth.handleAuthentication();
   }
   
-  ngOnInit() {
+  ngOnInit() { 
    /*  if (this.auth.isAuthenticated()) {
       this.auth.renewTokens();
     } */
