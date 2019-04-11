@@ -2,3 +2,9 @@
 51c4d4824dbf0cd82bbf67911cfe7c14
 
 https://developers.zomato.com/documentation#!/common/cuisines
+
+
+auth0 tut 
+https://auth0.com/blog/real-world-angular-series-part-2/#L-span-id--admin-authorization----span-Admin-Authorization
+
+https://auth0.com/docs/quickstart/spa/angular2/02-user-profile

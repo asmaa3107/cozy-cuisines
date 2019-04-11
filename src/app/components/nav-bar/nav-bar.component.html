@@ -15,16 +15,35 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/cuisines">Cuisines</a>
         </li>
-        <li class="nav-item"  *ngIf="!auth.isAuthenticated()" ><!-- routerLink="/login" routerLink="/signup"-->
-          <a class="nav-link"  (click)="auth.login()">login</a>
+        <li class="nav-item" ><!-- routerLink="/login" routerLink="/signup"-->
+          <a class="nav-link" *ngIf="!auth.loggedIn" (click)="auth.login()">login</a>
         </li>
-        <li class="nav-item" *ngIf="auth.isAuthenticated">
-            <a class="nav-link" (click)="auth.logout()">logout</a>
+        <li *ngIf="auth.loggedIn && auth.userProfile">
+            <span >
+                {{ auth.userProfile.name }}
+                <!-- <span class="divider">|</span> -->
+                <!-- <a (click)="auth.logout()">Log Out</a> -->
+              </span>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" *ngIf="auth.loggedIn" (click)="auth.logout()">logout</a>
           </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" (click)="auth.logout()">signup</a>
+          
+        <!-- <li class="nav-item"> *ngIf="!auth.isAuthenticated()" 
+          <a class="nav-link"(click)="auth.logout()" (click)="auth.login()" (click)="auth.logout()">signup</a>
         </li> -->
       </ul>
+ <div class="header-page-authStatus">
+    <span *ngIf="auth.loggingIn">Logging in...</span>
+    <ng-template *ngIf="!auth.loggingIn">
+      <a ngIf="!auth.loggedIn" (click)="auth.login()">Log In</a>
+      <span *ngIf="auth.loggedIn && auth.userProfile">
+        {{ auth.userProfile.name }}
+        <span class="divider">|</span>
+        <a (click)="auth.logout()">Log Out</a>
+      </span>
+    </ng-template>
+  </div>
     </div>
   </div>
 </nav>

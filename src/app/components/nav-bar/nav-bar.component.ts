@@ -7,9 +7,15 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./nav-bar.component.scss"]
 })
 export class NavBarComponent implements OnInit {
-  constructor(private auth: AuthService) {}
-
+  constructor(public auth: AuthService) {}
+  profile: any;
   ngOnInit() {
-  
+   /*   if (this.auth._userProfile) {
+      this.profile = this.auth._userProfile;
+    } else {
+      this.auth.getProfile((err, profile) => {
+        this.profile = profile;
+      });
+    }  */
   }
 }

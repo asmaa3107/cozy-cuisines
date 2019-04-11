@@ -12,6 +12,7 @@ import { HttpClientModule } from "@angular/common/http";
 /*********services Provider **** */
 import { AuthService } from "./services/auth.service";
 import { CuisinesService } from "./services/cuisines.service";
+import { CallbackComponent } from "./components/callback/callback.component";
  
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CuisinesService } from "./services/cuisines.service";
     CusionsComponent,
     CusionsRecipesComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,9 @@ import { CuisinesService } from "./services/cuisines.service";
       {
         path: "signup",
         component: SignupComponent
+      }, {
+        path: 'callback',
+        component: CallbackComponent
       }
     ])
   ],

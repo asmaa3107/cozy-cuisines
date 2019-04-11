@@ -10,13 +10,13 @@ export class AppComponent {
   title = 'cozy-cuisines';
   
   constructor(public auth: AuthService) {
-    auth.handleAuthentication();
+    //auth.handleAuthentication();
   }
   
   ngOnInit() {
-    if (this.auth.isAuthenticated()) {
+   /*  if (this.auth.isAuthenticated()) {
       this.auth.renewTokens();
-    }
+    } */
   }
 
 }
