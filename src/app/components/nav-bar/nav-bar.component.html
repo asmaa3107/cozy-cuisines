@@ -1,11 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">Start Bootstrap</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" (click)="toggleNavbar()"
+      type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div class="collapse navbar-collapse " [ngClass]="{ 'show': navbarOpen }"
+      id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#">Home
@@ -15,35 +18,35 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/cuisines">Cuisines</a>
         </li>
-        <li class="nav-item" ><!-- routerLink="/login" routerLink="/signup"-->
+        <li class="nav-item">
+          <!-- routerLink="/login" routerLink="/signup"-->
           <a class="nav-link" *ngIf="!auth.loggedIn" (click)="auth.login()">login</a>
         </li>
-        <li *ngIf="auth.loggedIn && auth.userProfile">
-            <span >
-                {{ auth.userProfile.name }}
-                <!-- <span class="divider">|</span> -->
-                <!-- <a (click)="auth.logout()">Log Out</a> -->
-              </span>
+
+         <li class="nav-item" >
+         
+           <!-- [src]="auth.userProfile.picture" -->
+          <a class="nav-link" routerLink="userProfile" routerLinkActive="router-link-active">
+           <img src="../../../assets/imgs/p-img.jpg"
+           alt="" class=" rounded-circle photo " /><span>
+asmaa ahmed
+           </span> 
+          </a>
+        </li>
+
+
+        <li class="nav-item" *ngIf="auth.loggedIn && auth.userProfile">
+          <img src="../../../assets/imgs/p-img.jpg" alt="" class="img-responsive rounded-circle " />
+           <!-- [src]="auth.userProfile.picture" -->
+          <a class="nav-link" routerLink="userProfile" routerLinkActive="router-link-active">
+            {{ auth.userProfile.name }}
+          </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" *ngIf="auth.loggedIn" (click)="auth.logout()">logout</a>
-          </li>
-          
-        <!-- <li class="nav-item"> *ngIf="!auth.isAuthenticated()" 
-          <a class="nav-link"(click)="auth.logout()" (click)="auth.login()" (click)="auth.logout()">signup</a>
-        </li> -->
+          <a class="nav-link" *ngIf="auth.loggedIn" (click)="auth.logout()">logout</a>
+        </li>
       </ul>
- <div class="header-page-authStatus">
-    <span *ngIf="auth.loggingIn">Logging in...</span>
-    <ng-template *ngIf="!auth.loggingIn">
-      <a ngIf="!auth.loggedIn" (click)="auth.login()">Log In</a>
-      <span *ngIf="auth.loggedIn && auth.userProfile">
-        {{ auth.userProfile.name }}
-        <span class="divider">|</span>
-        <a (click)="auth.logout()">Log Out</a>
-      </span>
-    </ng-template>
-  </div>
+
     </div>
   </div>
 </nav>
