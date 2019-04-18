@@ -12,8 +12,8 @@ const apiURI = _isDev ? 'http://localhost:8083/api/' : `/api/`;
 export const environment = {
 
   production: false,
-  apiKey: "51c4d4824dbf0cd82bbf67911cfe7c14",
-  apiUrl: "https://developers.zomato.com/api/v2.1/cuisines?city_id=280&",
+  apiKey: [API_KEY],
+  apiUrl: [API_URL],
   BASE_URI: getHost(),
   BASE_API: apiURI
  
