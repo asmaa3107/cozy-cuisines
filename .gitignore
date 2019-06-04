@@ -38,3 +38,5 @@ testem.log
 .DS_Store
 Thumbs.db
 cozy-cuisines.rar
+
+/environments/_key.txt
