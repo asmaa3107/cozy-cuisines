@@ -9,6 +9,11 @@ import { Component, OnInit } from "@angular/core";
 export class NavBarComponent implements OnInit {
   constructor(public auth: AuthService) {}
   profile: any;
+   navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
   ngOnInit() {
    /*   if (this.auth._userProfile) {
       this.profile = this.auth._userProfile;
